@@ -1,0 +1,31 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "webpack-dev-server --open",
+    "dev:copycast": "copycast"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcLB/burger-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcLB/burger-app/issues"
+  },
+  "homepage": "https://github.com/marcLB/burger-app#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}
