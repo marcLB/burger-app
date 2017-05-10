@@ -59,3 +59,32 @@ module.exports = {
 <script src="bundle.js"></script>
 ...
 ```
+
+// 8. Lancer le server
+```npm run dev:server```
+
+
+## Utilisation de AngularJS
+
+```js
+// app/index.js
+import angular from 'angular';
+
+angular.module('app', [])
+```
+
+```html
+...
+<body ng-app="app">
+</body>
+...
+```
+## Bootstrap
+
+`npm i bootstrap -S`
+
+`npm i css-loader file-loader style-loader -D`
+
+## Linter
+
+`npm i standard -D`

@@ -1,0 +1,5 @@
+<div ng-controller="ApplicationInfoController as $ctrl">
+    <ul>
+        <li ng-repeat="user in $ctrl.users | orderBy:'name' track by $index">{{ user.name }}</li>
+    </ul>
+</div>
