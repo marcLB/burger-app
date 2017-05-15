@@ -1,25 +1,23 @@
-import angular from 'angular';
-import css from 'bootstrap/dist/css/bootstrap.css';
+import angular from 'angular'
+import 'bootstrap/dist/css/bootstrap.css'
 
-import { UserController} from './user.controller';
-import { ApplicationInfoController } from './application-info.controller'
-import { TabsController } from './tabs.controller'
-import { TotoFilter } from './toto.filter'
-import { reverseFilter } from './reverse.filter'
+import { BurgerService } from './old/burger.service'
+import { ToppingService } from './old/topping.service'
 
-//Création du module app application
-angular.module('app', []);
+import { GameComponent } from './game/game.component'
+import { ToppingsComponent } from './toppings/toppings.component'
+import { BurgerComponent } from './burger/burger.component'
+import { RecipeComponent } from './recipe/recipe.component'
 
-//Récupérer le module app, sans créer une variable
-angular.module('app')
-    .config(function () {
-        console.log('******* CONFIG ANGULAR *******')
-    })
-    .run(function () {
-        console.log('******* RUN ANGULAR *******')
-    })
-    .controller('UserController', UserController)
-    .controller('ApplicationInfoController', ApplicationInfoController)
-    .controller('TabsController', TabsController)
-    .filter('tata', reverseFilter)
-    .filter('toto', TotoFilter)
+// Création du module app (application)
+angular.module('app', [
+])
+
+
+.component('dtaGame', GameComponent)
+.component('dtaToppings', ToppingsComponent)
+.component('dtaBurger', BurgerComponent)
+.component('dtaRecipe', RecipeComponent)
+
+.service('BurgerService', BurgerService)
+.service('ToppingService', ToppingService)

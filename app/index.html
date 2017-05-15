@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Burger App</title>
-    <script src="bundle.js"></script>
+    <title>Burger</title>
+    <script src="/bundle.js"></script>
     <style>
         .container {
             margin-top: 3em;
         }
+        .sort.up::after {
+            content: ' ↑'
+        }
+        .sort.down::after {
+            content: ' ↓'
+        }
     </style>
+    <base href="/">
 </head>
-<!-- ng-app initialise angular -->
-<body ng-app="app">
-         <div class="container" ng-controller="TabsController as $ctrl">
-        
-  
+<body ng-app="app"> 
+
+     
+      <dta-game></dta-game>
+     
+   <!-- <div ng-controller="MyController as $ctrl">
+         <dta-gravatar 
+            email="$ctrl.marc"
+            on-talk="$ctrl.talk($event)">
+        </dta-gravatar>
+    </div>
+-->
+     
+     <!--
+      <a href="/">BURGERS</a>
+    <a href="/game">PLAY</a>
+    
+
+    <div ng-view class="container"></div>    
+
+    <div class="container" ng-controller="TabsController as $ctrl">
+
         <ul class="nav nav-tabs">
-           <li ng-repeat="tab in $ctrl.tabs track by $index"
-                ng-class="{'active': $ctrl.index === $index}">
+            <li ng-repeat="tab in $ctrl.tabs track by $index"
+                ng-class="{'active': $ctrl.tab === $index}">
                 <a ng-click="$ctrl.changeTab($index)" href>{{ tab.title }}</a>
             </li>
             <li class="pull-right">
@@ -36,15 +59,12 @@
                 </div>
             </li>
         </ul>
-       
+
         <ng-include 
             ng-repeat="tab in $ctrl.tabs track by $index"
             ng-if="$ctrl.tab === $index"
             src="$ctrl.getTemplate(tab)"></ng-include>
-     
- 
-   </div>
-    
-</body>
 
+    </div>-->
+</body>
 </html>

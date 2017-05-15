@@ -1,0 +1,15 @@
+dta-gravatar {
+    display: inline-block;
+    margin: .5em;
+    padding: .2em;
+    border: 1px solid red;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px #666;
+}
+
+dta-gravatar:hover {
+    box-shadow: 10px 10px 10px black;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: all 1s
+}

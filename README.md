@@ -88,3 +88,26 @@ angular.module('app', [])
 ## Linter
 
 `npm i standard -D`
+
+## Routing
+
+`npm i angular-route -S`
+
+```js
+// webpack.config.json
+devServer {
+    ...
+    historyApiFallback: true
+}
+```
+## Raw (html) loader
+
+`npm i raw-loader -D`
+
+```js
+{
+    test: /\.html$/,
+    exclude: [/node_modules/],
+    loader: 'raw-loader',
+},
+```
