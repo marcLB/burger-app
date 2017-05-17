@@ -10,23 +10,21 @@ class controller {
         if (changes.toppings && changes.toppings.currentValue) {
             
             // on retourne le tableau (cloné) avant de l'afficher
-            this.toppings = angular.copy(this.toppings).reverse();
+            this.toppings = angular.copy(this.toppings).reverse()
 
-            // nouvelle recette === nouveau compteur
-            if (this.interval) {
-                this.$interval.cancel(this.interval)
-            }
-            this.cpt = 10
-            this.interval = this.$interval(() => {
-                this.cpt--
-                console.log(this.cpt)
-                if (this.cpt === 0) {
-                    this.$interval.cancel(this.interval)
-                    console.log('perdu')
-                }
-            }, 1000)
+
+            this.time = { value: 10 }
         }
     }
+
+    end () {
+        this.onTimeout()
+    }
+
+    start (remain) {
+        this.updateScore({$event: remain})
+    }
+
 
 }
 
@@ -34,6 +32,8 @@ export let RecipeComponent = {
     controller,
     template,
     bindings: {
-        toppings: '<'
+        toppings: '<',
+        onTimeout: '&',
+        updateScore: '&'
     }
 }

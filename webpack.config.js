@@ -1,9 +1,10 @@
 const path = require('path');
+const output = process.env.NODE_ENV === 'development' ? 'app' : 'dist';
 
 module.exports = {
     entry: "./app", //entrée du projet
     output: {
-        path: path.resolve(__dirname, "app"),
+        path: path.resolve(__dirname, output),
         filename: "bundle.js"
     },
 

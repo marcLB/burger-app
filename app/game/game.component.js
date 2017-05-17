@@ -2,12 +2,15 @@
 import template from './game.component.html'
 
 class controller {
-    constructor (ToppingService) {
+    constructor (ToppingService, $location) {
+        this.$location=$location
         this.ToppingService = ToppingService
-        this.burger = []
+        this.score=false
+        this.remain
     }
 
     $onInit () {
+        this.restart()
         this.ToppingService.getToppings()
         .then(toppings => this.toppings = toppings)
 
@@ -19,19 +22,49 @@ class controller {
         this.burger = [...this.burger, topping.name]
         const check = this.ToppingService.checkRecipe(this.burger, this.recipe)
         if (check === 'VALID') {
-            this.burger = []
-            this.recipe = []
+            console.log('You Win')
             this.ToppingService.getRandomRecipe()
             .then(recipe => this.recipe = recipe)
         }
         if (check === 'INVALID') {
-            console.log('GAME OVER')
+            this.gameOver ();
         }
+    }
+
+
+    restart () {
+        this.burger = []
+        this.recipe = []
+        this.running = true
+        this.score = false
+        this.ToppingService.getRandomRecipe()
+        .then(recipe => this.recipe = recipe)
+    }
+
+    win ($event) {
+        if($event){
+            this.running = false
+            this.score = true
+            this.remain=$event
+            console.log($event,this.score)
+        }
+    }
+
+    gameOver () {
+        this.$location.path('/')
+        this.score = false
+        this.running=false
+    }
+
+    startGame () {
+        console.log("startGame")
     }
 }
 
 export let GameComponent = {
     template,
     controller,
-    bindings: {}
+    bindings: {
+
+    }
 }

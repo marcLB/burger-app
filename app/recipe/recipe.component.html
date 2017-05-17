@@ -1,4 +1,10 @@
-<ul class="list-group">
+<h3>Do this recipe</h3>
+<dta-countdown
+  on-end="$ctrl.end()"
+  on-start="$ctrl.start($event)"
+  time="$ctrl.time"></dta-countdown>
+
+ <ul class="list-group">
   <li 
     class="list-group-item" 
     ng-repeat="topping in $ctrl.toppings track by $index">

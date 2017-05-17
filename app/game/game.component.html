@@ -1,25 +1,32 @@
-<div class="container">
-
-    <div class="row">
-        
+<h1 class="text-center">Burger App</h1>
+<div class="container" >
+    <div class="row" ng-if="$ctrl.running">
         <div class="col-sm-6">
-            
-            <dta-toppings 
-                toppings="$ctrl.toppings"
-                on-select="$ctrl.selectTopping($event)"></dta-toppings>
-
+            <dta-toppings
+            toppings="$ctrl.toppings"
+            on-select="$ctrl.selectTopping($event)"></dta-toppings>
             <dta-recipe
-                toppings="$ctrl.recipe"></dta-recipe>
-
+            update-score="$ctrl.win($event)"
+            on-timeout="$ctrl.gameOver()"
+            toppings="$ctrl.recipe">
+            </dta-recipe>
         </div>
-
         <div class="col-sm-6">
-            
-            <dta-burger
-                toppings="$ctrl.burger"></dta-burger>
-
+            <dta-burger toppings="$ctrl.burger"></dta-burger>
         </div>
-
     </div>
-
+    <div ng-if="!$ctrl.running && !$ctrl.score">
+        <h1>Fail ! </h1>
+        <button ng-click="$ctrl.restart()" class="btn btn-primary">
+            Try Again
+        </button>
+    </div>
+    <div ng-if="$ctrl.score">
+        <h1>You Win !
+            {{ $ctrl.remain }}
+        </h1>
+        <button ng-click="$ctrl.restart()" class="btn btn-primary">
+            Restart
+        </button>
+    </div>
 </div>

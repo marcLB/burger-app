@@ -21,11 +21,11 @@
 </head>
 <body id="body" ng-app="app">
 
-     
+
       <ng-view></ng-view>
-     
+
 <!-- <div ng-controller="MyController as $ctrl">
-         <dta-gravatar 
+         <dta-gravatar
             email="$ctrl.marc"
             on-talk="$ctrl.talk($event)">
         </dta-gravatar>
@@ -34,9 +34,9 @@
 <!--
       <a href="/">BURGERS</a>
     <a href="/game">PLAY</a>
-    
 
-    <div ng-view class="container"></div>    
+
+    <div ng-view class="container"></div>
 
     <div class="container" ng-controller="TabsController as $ctrl">
 
@@ -49,7 +49,7 @@
                 <div class="btn-group">
                     <button ng-click="$ctrl.navigateTab(-1)"
                         class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-chevron-left"></span>                    
+                        <span class="glyphicon glyphicon-chevron-left"></span>
                     </button>
                     <button ng-click="$ctrl.navigateTab(+1)"
                          class="btn btn-default btn-sm">
@@ -59,7 +59,7 @@
             </li>
         </ul>
 
-        <ng-include 
+        <ng-include
             ng-repeat="tab in $ctrl.tabs track by $index"
             ng-if="$ctrl.tab === $index"
             src="$ctrl.getTemplate(tab)"></ng-include>
